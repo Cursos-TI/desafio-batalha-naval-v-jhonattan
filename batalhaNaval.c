@@ -10,8 +10,8 @@
 #define COLUNAS 10
 
 int main() {
-    // Nível Novato 
-    
+
+    // Batalha Naval - Nivel Aventureiro 
     // Matriz 10x10 que representa o tabuleiro (0 representa agua e 3 o navio)
     
     int tabuleiro[LINHAS][COLUNAS];
@@ -23,20 +23,29 @@ int main() {
         }
     }
 
-    // Cordenadas iniciais
-    int navioH_linha = 2, navioH_coluna = 4;
-    int navioV_linha = 5, navioV_coluna = 7;
+    // --- Posicionamento dos 4 Navios
 
-    // Posicionamento do Navio Horizontal
+    // Posicionamento do Navio na Horizontal
     for (int j = 0; j < tamanhoNavio; j++) {
-        tabuleiro[navioH_linha][navioH_coluna + j] = 3;
+        tabuleiro[1][1 + j] = 3;
     }
 
-    // Posicionamento do Navio Vertical
+    // Posicionamento do Navio na Vertical
     for (int i = 0; i < tamanhoNavio; i++) {
-        tabuleiro[navioV_linha + i][navioV_coluna] = 3;
+        tabuleiro[4 + i][8] = 3;
 
     }
+
+    //Posicionamento dos Navios na Diagonal
+    for (int k = 0; k < tamanhoNavio; k++) {
+        tabuleiro[1 + k][7 + k] = 3;
+    }
+
+    //Posicionamento dos Navios na Diagonal
+    for (int h = 0; h < tamanhoNavio; h++) {
+        tabuleiro[6 + h][1 + h] = 3;
+    }
+
 
     // Exibição do Tabuleiro 
     printf("--- Tabuleiro Batalha Naval --- \n\n");
@@ -53,32 +62,6 @@ int main() {
     }
 
 
-    
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
-
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
-
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
-    
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
-
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
 
     return 0;
 }
